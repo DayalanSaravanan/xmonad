@@ -1,0 +1,14 @@
+#!/bin/sh
+# Script to configure X, start common apps, and start xmonad.
+# Author: D.Saravanan
+
+# Configure X
+xsetroot -cursor_name left_ptr &
+xrdb -merge ~/.Xdefaults &
+xmodmap ~/.xmodmap
+setxkbmap -option "ctrl:nocaps" &
+
+# Set a wallpaper
+feh --bg-fill /home/ndayalan/Pictures/121317.png &
+
+exec dbus-launch --sh-syntax --exit-with-session xmonad
