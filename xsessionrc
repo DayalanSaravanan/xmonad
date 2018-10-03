@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Load resources
+xrdb -merge /etc/X11/Xresources
+
+if [ -x /usr/bin/nm-applet ] ; then
+   nm-applet --sm-disable &
+fi
+
+exec /usr/bin/xmonad-session
